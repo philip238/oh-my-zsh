@@ -83,8 +83,10 @@ alias glgga='git log --graph --decorate --all'
 compdef _git glgga=git-log
 alias glo='git log --oneline --decorate --color'
 compdef _git glo=git-log
-alias glog="git log --all --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%    an>%Creset'"
-compdef _git glog=git-shortlog -sn
+alias glog="git log --all --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+compdef _git glog=git-log
+alias glogb="git log --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+compdef _git glogb=git-log
 alias glogs='git shortlog -sn'
 compdef _git glog=git-log
 alias gss='git status -s'
