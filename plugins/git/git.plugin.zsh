@@ -21,9 +21,10 @@ alias gs='git stash'
 compdef _git gs=git-stash
 alias gsp='git stash apply'
 compdef _git gsp=git-stash apply
-alias gl='git fetch --all ; git pull'
+#alias gl='git fetch --all ; git pull'
+alias gl='git up'
 compdef _git gl=git-pull
-alias gup='git pull --rebase'
+alias gup='git up'
 alias gfa='git fetch --all'
 compdef _git gup=git-fetch
 alias gp='git push'
@@ -83,9 +84,9 @@ alias glgga='git log --graph --decorate --all'
 compdef _git glgga=git-log
 alias glo='git log --oneline --decorate --color'
 compdef _git glo=git-log
-alias glog="git log --all --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+alias glog="git log --all --graph --no-merges --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 compdef _git glog=git-log
-alias glogb="git log --graph --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
+alias glogb="git log --graph --no-merges --pretty=format:'%C(auto)%h -%d %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'"
 compdef _git glogb=git-log
 alias glogs='git shortlog -sn'
 compdef _git glog=git-log
