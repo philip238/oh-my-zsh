@@ -35,6 +35,7 @@ alias gd='git diff'
 gdv() { git diff -w "$@" | view - }
 compdef _git gdv=git-diff
 alias gdt='git difftool'
+alias gdw='gd --word-diff-regex=. --word-diff=color --color-words'
 alias gc='git commit -v'
 compdef _git gc=git-commit
 alias gc!='git commit -v --amend'
