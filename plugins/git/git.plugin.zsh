@@ -61,12 +61,16 @@ alias grset='git remote set-url'
 compdef _git grset=git-remote
 alias grup='git remote update'
 compdef _git grset=git-remote
+
+alias grb='git rebase'
+compdef _git grb=git-rebase
 alias grbi='git rebase -i'
 compdef _git grbi=git-rebase
 alias grbc='git rebase --continue'
 compdef _git grbc=git-rebase
 alias grba='git rebase --abort'
 compdef _git grba=git-rebase
+
 alias gb='git branch'
 compdef _git gb=git-branch
 alias gba='git branch -a'
