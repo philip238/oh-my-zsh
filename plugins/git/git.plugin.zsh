@@ -36,6 +36,7 @@ gdv() { git diff -w "$@" | view - }
 compdef _git gdv=git-diff
 alias gdt='git difftool'
 alias gdw='gd --word-diff-regex=. --word-diff=color --color-words'
+
 alias gc='git commit -v'
 compdef _git gc=git-commit
 alias gc!='git commit -v --amend'
@@ -49,6 +50,7 @@ compdef _git gcmsg=git-commit
 alias gco='git checkout'
 compdef _git gco=git-checkout
 alias gcm='git checkout master'
+
 alias gr='git remote'
 compdef _git gr=git-remote
 alias grv='git remote -v'
@@ -76,11 +78,13 @@ compdef _git gb=git-branch
 alias gba='git branch -a'
 compdef _git gba=git-branch
 alias gbr='git branch --remote'
+
 alias gcount='git shortlog -sn'
 compdef gcount=git
 alias gcl='git config --list'
 alias gcp='git cherry-pick'
 compdef _git gcp=git-cherry-pick
+
 alias glg='git log --stat --max-count=10'
 compdef _git glg=git-log
 alias glgg='git log --graph --max-count=10'
@@ -95,6 +99,7 @@ alias glogb="git log --graph --no-merges --pretty=format:'%C(auto)%h -%d %s %Cgr
 compdef _git glogb=git-log
 alias glogs='git shortlog -sn'
 compdef _git glog=git-log
+
 alias gss='git status -s'
 compdef _git gss=git-status
 alias ga='git add --all'
