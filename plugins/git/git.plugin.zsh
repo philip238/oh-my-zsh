@@ -92,7 +92,7 @@ alias glogs='git shortlog -sn'
 compdef _git glog=git-log
 alias gss='git status -s'
 compdef _git gss=git-status
-alias ga='git add'
+alias ga='git add --all'
 compdef _git ga=git-add
 alias gap='git add --patch'
 alias gaa='git add --all'
@@ -147,15 +147,15 @@ alias gsd='git svn dcommit'
 # Usage example: git pull origin $(current_branch)
 #
 function current_branch() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
-  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
-  echo ${ref#refs/heads/}
+ref=$(git symbolic-ref HEAD 2> /dev/null) || \
+    ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+echo ${ref#refs/heads/}
 }
 
 function current_repository() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null) || \
-  ref=$(git rev-parse --short HEAD 2> /dev/null) || return
-  echo $(git remote -v | cut -d':' -f 2)
+ref=$(git symbolic-ref HEAD 2> /dev/null) || \
+    ref=$(git rev-parse --short HEAD 2> /dev/null) || return
+echo $(git remote -v | cut -d':' -f 2)
 }
 
 # these aliases take advantage of the previous function
@@ -170,9 +170,9 @@ compdef ggpnp=git
 
 # Pretty log messages
 function _git_log_prettily(){
-  if ! [ -z $1 ]; then
+if ! [ -z $1 ]; then
     git log --pretty=$1
-  fi
+fi
 }
 alias glp="_git_log_prettily"
 compdef _git glp=git-log
@@ -183,9 +183,9 @@ compdef _git glp=git-log
 #
 # This function return a warning if the current branch is a wip
 function work_in_progress() {
-  if $(git log -n 1 2>/dev/null | grep -q -c "\-\-wip\-\-"); then
+if $(git log -n 1 2>/dev/null | grep -q -c "\-\-wip\-\-"); then
     echo "WIP!!"
-  fi
+fi
 }
 # these alias commit and uncomit wip branches
 alias gwip='git add -A; git ls-files --deleted -z | xargs -r0 git rm; git commit -m "--wip--"'
