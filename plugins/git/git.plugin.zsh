@@ -31,6 +31,8 @@ alias gp='git push'
 compdef _git gp=git-push
 alias gpt='git push --tags origin'
 compdef _git gp=git-push --tags origin
+alias gpnv='git push --no-verify'
+compdef _git gpnv=git-push --no-verify
 gdv() { git diff -w "$@" | view - }
 compdef _git gdv=git-diff
 alias gdt='git difftool'
