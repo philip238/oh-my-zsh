@@ -196,3 +196,7 @@ alias gignore='git update-index --assume-unchanged'
 alias gunignore='git update-index --no-assume-unchanged'
 # list temporarily ignored files
 alias gignored='git ls-files -v | grep "^[[:lower:]]"'
+
+# Custom aliases
+alias gsh='git show'
+alias gpnv='git push --no-verify'
