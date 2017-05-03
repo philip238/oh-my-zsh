@@ -38,6 +38,7 @@ alias gdt='git difftool'
 alias gc='git commit -v'
 compdef _git gc=git-commit
 alias gc!='git commit -v --amend'
+alias gcr='git commit --amend --no-edit --reset-author'
 compdef _git gc!=git-commit
 alias gca='git commit -v -a'
 compdef _git gc=git-commit
@@ -200,3 +201,4 @@ alias gignored='git ls-files -v | grep "^[[:lower:]]"'
 # Custom aliases
 alias gsh='git show'
 alias gpnv='git push --no-verify'
+alias gpnvf='git push --no-verify -f'
